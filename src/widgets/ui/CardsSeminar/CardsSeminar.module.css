@@ -1,0 +1,17 @@
+.CardsSeminar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.CardsSeminar h2 {
+    font-size: 38px;
+    color: white;
+}
+.CardsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 60%;
+    gap: 10px;
+}

@@ -1,0 +1,21 @@
+.CardSeminar {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(184, 184, 184);
+    gap: 10px;
+    padding: 10px;
+    border-radius: 12px;
+    max-width: 340px;
+}
+.CardSeminar h3 {
+    font-size: 24px;
+}
+.CardContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.CardButtons {
+    display: flex;
+    gap: 10px;
+}
