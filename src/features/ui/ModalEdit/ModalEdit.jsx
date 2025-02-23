@@ -3,8 +3,10 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import modalStore from '../../store/modalStore';
 import { observer } from 'mobx-react-lite';
-import { CloseModal, EditButtonModal } from '../../../widgets';
+import { CloseModal } from '../../../widgets';
 import cls from './ModalEdit.module.css';
+import { useState } from 'react';
+import { EditSeminar } from '../EditSeminar/EditSeminar';
 
 const style = {
     position: 'absolute',
@@ -19,6 +21,9 @@ const style = {
 };
 
 export const ModalEdit = observer(() => {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+
     return (
         <div>
             <Modal
@@ -31,14 +36,20 @@ export const ModalEdit = observer(() => {
                         Вы уверены, что хотите удалить семинар из списка?
                     </Typography>
                     <div className={cls.form}>
-                        <form className={cls.formContent} action="">
-                            <label htmlFor="">Редкатировать заголовок: </label>
-                            <input type="text" />
-                            <label htmlFor="">Редактировать описание: </label>
-                            <input type="text" />
-                        </form>
+                        <label htmlFor="">Редкатировать заголовок: </label>
+                        <input
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                            type="text"
+                        />
+                        <label htmlFor="">Редактировать описание: </label>
+                        <input
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                            type="text"
+                        />
                     </div>
-                    <EditButtonModal />
+                    <EditSeminar title={title} description={description} />
                     <CloseModal />
                 </Box>
             </Modal>

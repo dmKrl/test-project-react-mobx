@@ -3,13 +3,13 @@ import Button from '../../../shared/ui/Button/Button';
 import seminarsStore from '../../store/seminarsStore';
 import modalStore from '../../store/modalStore';
 
-export const DeleteSeminar = observer(() => {
+export const EditSeminar = observer(({ title, description }) => {
     console.log(seminarsStore.chosenSeminar);
-    const deleteSeminar = () => {
-        seminarsStore.deleteSeminar();
-        modalStore.setIsOpenDeleteModal();
+    const editSeminar = () => {
+        seminarsStore.editSeminar({ title, description });
+        modalStore.setIsOpenEditModal();
         modalStore.setIsOpenInfoModal();
     };
 
-    return <Button onClick={deleteSeminar}>Удалить семинар</Button>;
+    return <Button onClick={editSeminar}>Редактировать семинар</Button>;
 });

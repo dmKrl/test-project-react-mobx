@@ -2,8 +2,7 @@ import { DeleteButtonModal, EditButtonModal } from '../../../widgets';
 import cls from './CardSeminar.module.css';
 
 const CardSeminar = ({ seminar }) => {
-    const { title, description, date, time, photo, id } = seminar;
-    console.log(seminar);
+    const { title, description, date, time, photo } = seminar;
 
     return (
         <div className={cls.CardSeminar}>
@@ -16,7 +15,7 @@ const CardSeminar = ({ seminar }) => {
             </div>
             <div className={cls.CardButtons}>
                 <DeleteButtonModal seminar={seminar}>Удалить семинар</DeleteButtonModal>
-                <EditButtonModal id={id} title={title} description={description} />
+                <EditButtonModal seminar={seminar} />
             </div>
         </div>
     );

@@ -28,16 +28,19 @@ class SeminarsStore {
         this.getSeminars();
     }
 
-    // async editSeminar({ title, description, id }) {
-    //     await axios.put(`http://localhost:3000/seminars/${id}`, {
-    //         body: {
-    //             title,
-    //             description,
-    //         },
-    //     });
+    async editSeminar({ title, description }) {
+        try {
+            await axios.put(`http://localhost:3000/seminars/${this.chosenSeminar.id}`, {
+                ...this.chosenSeminar,
+                title: title,
+                description: description,
+            });
 
-    //     this.getSeminars();
-    // }
+            await this.getSeminars();
+        } catch (error) {
+            console.error('Ошибка при редактировании семинара:', error);
+        }
+    }
 }
 
 const seminarsStore = new SeminarsStore();
