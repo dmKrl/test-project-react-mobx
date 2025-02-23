@@ -1,26 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './styles/App.css';
 import CardsSeminar from '../widgets/ui/CardsSeminar/CardsSeminar';
+import seminarsStore from '../features/store/seminarsStore';
+import { observer } from 'mobx-react-lite';
+import { ModalEdit } from '../features/ui/modalEdit/modalEdit';
+import { ModalDelete } from '../features/ui/modalDelete/modalDelete';
 
-function App() {
-    const [seminars, setSeminars] = useState();
-
-    async function getFetchSeminars() {
-        const response = await fetch('http://localhost:3000/seminars');
-        const responseData = await response.json();
-
-        return responseData;
-    }
-
+const App = observer(() => {
     useEffect(() => {
-        getFetchSeminars().then((data) => setSeminars(data));
+        seminarsStore.getSeminars();
     }, []);
-    console.log(seminars);
+
+    console.log(seminarsStore.seminars);
+
     return (
         <div className="app">
-            <CardsSeminar seminars={seminars} />
+            <CardsSeminar seminars={seminarsStore.seminars} />
+            <ModalDelete />
+            <ModalEdit />
         </div>
     );
-}
+});
 
 export default App;

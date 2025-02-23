@@ -1,6 +1,7 @@
 .CardSeminar {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     background-color: rgb(184, 184, 184);
     gap: 10px;
     padding: 10px;

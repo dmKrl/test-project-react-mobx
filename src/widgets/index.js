@@ -1,2 +1,2 @@
-export { DeleteButton } from './ui/DeleteButton/DeleteButton';
-export { EditButton } from './ui/EditButton/EditButton';
+export { DeleteButtonModal } from './ui/DeleteButtonModal/DeleteButtonModal';
+export { EditButtonModal } from './ui/EditButtonModal/EditButtonModal';

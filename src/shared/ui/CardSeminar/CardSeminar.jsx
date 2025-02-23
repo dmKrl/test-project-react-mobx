@@ -1,8 +1,9 @@
-import { DeleteButton, EditButton } from '../../../widgets';
+import { DeleteButtonModal, EditButtonModal } from '../../../widgets';
 import cls from './CardSeminar.module.css';
 
 const CardSeminar = ({ seminar }) => {
-    const { title, description, date, time, photo } = seminar;
+    const { title, description, date, time, photo, id } = seminar;
+    console.log(seminar);
 
     return (
         <div className={cls.CardSeminar}>
@@ -14,8 +15,8 @@ const CardSeminar = ({ seminar }) => {
                 <img src={photo} alt="card-photo" />
             </div>
             <div className={cls.CardButtons}>
-                <DeleteButton />
-                <EditButton />
+                <DeleteButtonModal seminar={seminar}>Удалить семинар</DeleteButtonModal>
+                <EditButtonModal id={id} title={title} description={description} />
             </div>
         </div>
     );
