@@ -5,7 +5,6 @@ import modalStore from '../../store/modalStore';
 import { observer } from 'mobx-react-lite';
 import { DeleteSeminar } from '../ButtonDeleteSeminar/DeleteSeminar';
 import { CloseModal } from '../../../widgets';
-// import { DeleteButtonModal } from '../../../widgets';
 
 const style = {
     position: 'absolute',

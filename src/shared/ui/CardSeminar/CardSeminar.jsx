@@ -14,7 +14,7 @@ const CardSeminar = ({ seminar }) => {
                 <img src={photo} alt="card-photo" />
             </div>
             <div className={cls.CardButtons}>
-                <DeleteButtonModal seminar={seminar}>Удалить семинар</DeleteButtonModal>
+                <DeleteButtonModal seminar={seminar} />
                 <EditButtonModal seminar={seminar} />
             </div>
         </div>

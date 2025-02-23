@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
-//Store для модальных окон (состояния отображения и описание для модального окна с информацией о корректности запросов)
 
+//Store для модальных окон (состояния отображения и описание для модального окна с информацией о корректности запросов)
 class ModalStore {
     deleteModalIsOpen = false;
     editModalIsOpen = false;

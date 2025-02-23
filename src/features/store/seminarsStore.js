@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { makeAutoObservable } from 'mobx';
 import modalStore from './modalStore';
-//Store для семинаров (запросы на получение/удаление/редактирование семинаров) и хранение данных в глобальном стейте
 
+//Store для семинаров (запросы на получение/удаление/редактирование семинаров) и хранение данных в глобальном стейте
 class SeminarsStore {
     seminars = [];
     chosenSeminar = {};

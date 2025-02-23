@@ -5,7 +5,7 @@ import { observer } from 'mobx-react-lite';
 import { CloseModal } from '../../../widgets';
 import modalStore from '../../../features/store/modalStore';
 
-//Модальное окно о завершении операции
+//Модальное окно о завершении операции или выводе сообщения об ошибки запроса
 
 const style = {
     position: 'absolute',

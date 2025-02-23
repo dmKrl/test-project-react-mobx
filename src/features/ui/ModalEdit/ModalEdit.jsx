@@ -1,12 +1,12 @@
+import { observer } from 'mobx-react-lite';
+import { CloseModal } from '../../../widgets';
+import { useState } from 'react';
+import { EditSeminar } from '../EditSeminar/EditSeminar';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import modalStore from '../../store/modalStore';
-import { observer } from 'mobx-react-lite';
-import { CloseModal } from '../../../widgets';
 import cls from './ModalEdit.module.css';
-import { useState } from 'react';
-import { EditSeminar } from '../EditSeminar/EditSeminar';
 
 const style = {
     position: 'absolute',

@@ -3,8 +3,9 @@ import Button from '../../../shared/ui/Button/Button';
 import seminarsStore from '../../store/seminarsStore';
 import modalStore from '../../store/modalStore';
 
+//Кнопка для удаления карточки и закрытия модального окна
 export const DeleteSeminar = observer(() => {
-    console.log(seminarsStore.chosenSeminar);
+    
     const deleteSeminar = () => {
         seminarsStore.deleteSeminar();
         modalStore.setIsOpenDeleteModal();
