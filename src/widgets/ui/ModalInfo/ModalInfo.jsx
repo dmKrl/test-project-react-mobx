@@ -5,6 +5,8 @@ import { observer } from 'mobx-react-lite';
 import { CloseModal } from '../../../widgets';
 import modalStore from '../../../features/store/modalStore';
 
+//Модальное окно о завершении операции
+
 const style = {
     position: 'absolute',
     top: '50%',
@@ -27,7 +29,7 @@ export const ModalInfo = observer(() => {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Изменения успешно выполнены!
+                        {modalStore.infoModalDescription ? modalStore.infoModalDescription : 'Изменения прошли успешно!'}
                     </Typography>
                     <CloseModal />
                 </Box>

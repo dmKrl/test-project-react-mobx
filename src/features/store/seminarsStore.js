@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { makeAutoObservable } from 'mobx';
+import modalStore from './modalStore';
+//Store для семинаров (запросы на получение/удаление/редактирование семинаров) и хранение данных в глобальном стейте
 
 class SeminarsStore {
     seminars = [];
@@ -14,18 +16,31 @@ class SeminarsStore {
     }
 
     async getSeminars() {
-        const response = await fetch('http://localhost:3000/seminars');
-        const responseData = await response.json();
+        try {
+            const response = await fetch('http://localhost:3000/seminars');
+            const responseData = await response.json();
 
-        this.seminars = responseData;
+            this.seminars = responseData;
+        } catch (error) {
+            console.error('Ошибка при получении семинаров:', error);
+        }
     }
 
     async deleteSeminar() {
-        await axios
-            .delete(`http://localhost:3000/seminars/${this.chosenSeminar.id}`)
-            .catch((error) => console.log(error));
+        try {
+            await axios
+                .delete(`http://localhost:3000/seminars/${this.chosenSeminar.id}`)
+                .catch((error) => console.log(error));
 
-        this.getSeminars();
+            this.getSeminars();
+            await this.getSeminars();
+        } catch (error) {
+            modalStore.infoModalDescription(
+                'Ошибка при удалении семинара:',
+                error.message
+            );
+            console.error('Ошибка при удалении семинара:', error);
+        }
     }
 
     async editSeminar({ title, description }) {
@@ -38,6 +53,10 @@ class SeminarsStore {
 
             await this.getSeminars();
         } catch (error) {
+            modalStore.infoModalDescription(
+                'Ошибка при редактировании семинара:',
+                error.message
+            );
             console.error('Ошибка при редактировании семинара:', error);
         }
     }

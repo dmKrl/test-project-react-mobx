@@ -12,8 +12,6 @@ const App = observer(() => {
         seminarsStore.getSeminars();
     }, []);
 
-    console.log(seminarsStore.seminars);
-
     return (
         <div className="app">
             <CardsSeminar seminars={seminarsStore.seminars} />

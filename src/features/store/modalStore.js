@@ -1,9 +1,12 @@
 import { makeAutoObservable } from 'mobx';
+//Store для модальных окон (состояния отображения и описание для модального окна с информацией о корректности запросов)
 
 class ModalStore {
     deleteModalIsOpen = false;
     editModalIsOpen = false;
     infoModalIsOpen = false;
+
+    infoModalDescription = '';
 
     constructor() {
         makeAutoObservable(this);
@@ -19,6 +22,10 @@ class ModalStore {
 
     setIsOpenInfoModal() {
         this.infoModalIsOpen = !this.infoModalIsOpen;
+    }
+
+    setInfoModalDescription(description) {
+        this.infoModalDescription = description;
     }
 
     closeAllModal() {
