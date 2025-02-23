@@ -1,8 +1,30 @@
-# React + Vite
+# Тестовое задание Карточки семминаров
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Данное приложение позволяет пользователям просматривать каталог семинаров, удалять/редактировать их.
 
-Currently, two official plugins are available:
+## Описание работы проекта:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+В приложении присутствует одна страница со списком семинаров. Семминары расположены в БД развёрнутой как json-server.  
+Пользователь может просматривать список семминаров, удалять и редактировать их.  
+Удаляя, вспывает модальное окно, которого подтверждает у пользователя желание удалить семминар из списка.  
+Редактирование имеет аналогичное модальное окно, как при удалении, за исключением наличия полей ввода, для редактирования заголовка и описания семминара.  
+Также, пользователь имеет возможность поменять своё решение и закрыть модальное окно, если он передумал использовать выбранный им функционал.
+
+## Технический стек:
+
+React;  
+MobX;  
+Vite;  
+Material UI;  
+CSS Modules;  
+Json-server;
+
+## Установка и запуск проекта:
+
+Необходимо кланировать репозиторий: git repo clone dm_krl/test-project-react-mobx;  
+Установить заисимости: npm install;  
+Запустить приложение (Frontend): npm run start;  
+Запустить приложение (Backend): json-server -w db.json;  
+Приложение Frontend-части будет доступно по адресу: http://localhost:5174;  
+Приложение Backend-части будет доступно по адресу: http://localhost:3000;  
+
