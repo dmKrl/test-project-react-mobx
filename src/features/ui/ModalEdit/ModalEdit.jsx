@@ -3,7 +3,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import modalStore from '../../store/modalStore';
 import { observer } from 'mobx-react-lite';
-import { EditButtonModal } from '../../../widgets';
+import { CloseModal, EditButtonModal } from '../../../widgets';
+import cls from './ModalEdit.module.css';
 
 const style = {
     position: 'absolute',
@@ -29,14 +30,16 @@ export const ModalEdit = observer(() => {
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Вы уверены, что хотите удалить семинар из списка?
                     </Typography>
-                    <div>
-                        <form action="">
+                    <div className={cls.form}>
+                        <form className={cls.formContent} action="">
+                            <label htmlFor="">Редкатировать заголовок: </label>
                             <input type="text" />
-                            <input type="text" />
+                            <label htmlFor="">Редактировать описание: </label>
                             <input type="text" />
                         </form>
                     </div>
                     <EditButtonModal />
+                    <CloseModal />
                 </Box>
             </Modal>
         </div>

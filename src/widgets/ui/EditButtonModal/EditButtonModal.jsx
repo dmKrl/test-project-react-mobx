@@ -4,5 +4,5 @@ import modalStore from '../../../features/store/modalStore';
 import Button from '../../../shared/ui/Button/Button';
 
 export const EditButtonModal = observer(() => {
-    return <Button onClick={() => modalStore.setIsOpenEditModal()}>EditButton</Button>;
+    return <Button onClick={() => modalStore.setIsOpenEditModal()}>Редактировать</Button>;
 });

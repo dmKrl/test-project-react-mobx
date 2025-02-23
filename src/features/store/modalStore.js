@@ -14,6 +14,10 @@ class ModalStore {
     setIsOpenEditModal() {
         this.editModalIsOpen = !this.editModalIsOpen;
     }
+    closeAllModal() {
+        this.editModalIsOpen = false;
+        this.deleteModalIsOpen = false;
+    }
 }
 
 const modalStore = new ModalStore();

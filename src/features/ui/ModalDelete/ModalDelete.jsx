@@ -4,6 +4,7 @@ import Modal from '@mui/material/Modal';
 import modalStore from '../../store/modalStore';
 import { observer } from 'mobx-react-lite';
 import { DeleteSeminar } from '../ButtonDeleteSeminar/DeleteSeminar';
+import { CloseModal } from '../../../widgets';
 // import { DeleteButtonModal } from '../../../widgets';
 
 const style = {
@@ -31,6 +32,7 @@ export const ModalDelete = observer(() => {
                         Вы уверены, что хотите удалить семинар из списка?
                     </Typography>
                     <DeleteSeminar />
+                    <CloseModal />
                 </Box>
             </Modal>
         </div>
